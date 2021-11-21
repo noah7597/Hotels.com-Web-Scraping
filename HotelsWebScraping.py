@@ -70,12 +70,13 @@ def extract_record(item, image):
     
     return result
 
+#Example: 'New York City', 'New York', 'United States of America', '2021-06-01', '2021-06-23'
 def main(city, state, country, checkin_date, checkout_date, pages):
     driver = webdriver.Chrome(executable_path ="/Applications/chromedriver89")
     
     records = []
-        
-    driver.get(get_url('New York City', 'New York', 'United States of America', '2021-06-01', '2021-06-23'))
+    
+    driver.get(get_url(city, state, country, checkin_date, checkout_date))
     
     for page in range(1, pages+1):
         
